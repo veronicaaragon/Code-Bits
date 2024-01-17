@@ -1,0 +1,14 @@
+// Function to find the first element in a list that is less than a specified value
+function findFirstLessThan(list, listSize, value) {
+   // Iterate through the list
+   for (let i = 0; i < listSize; i++) {
+      // Check if the current element is less than the specified value
+      if (list[i] < value) {
+         // If found, return the current element
+         return list[i];
+      }
+   }
+
+   // If no lesser value is found, return the specified value
+   return value;
+}

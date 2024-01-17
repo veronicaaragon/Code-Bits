@@ -1,0 +1,64 @@
+// Function to perform binary search on a sorted array
+function BinarySearch(numbers, numbersSize, key) {
+   // Initialize variables for mid, low, and high indices
+   let mid = 0;
+   let low = 0;
+   let high = numbersSize - 1;
+
+   // Continue the search until the low index is less than or equal to the high index
+   while (high >= low) {
+      // Calculate the mid index
+      mid = Math.floor((high + low) / 2);
+
+      // Check if the key is in the left half
+      if (numbers[mid] < key) {
+         low = mid + 1;
+      }
+      // Check if the key is in the right half
+      else if (numbers[mid] > key) {
+         high = mid - 1;
+      }
+      // If the key is found, return the index
+      else {
+         return mid;
+      }
+   }
+
+   // If the key is not found, return -1
+   return -1;
+}
+
+// Main function
+function main() {
+   // Define a sorted array of numbers
+   numbers = [2, 4, 7, 10, 11, 32, 45, 87];
+
+   // Define the size of the array
+   NUMBERS_SIZE = 8;
+
+   // Initialize variables for user input and key index
+   let i = 0;
+   let key = 0;
+   let keyIndex = 0;
+
+   // Print the numbers in the array
+   print("NUMBERS: ");
+   for (i = 0; i < NUMBERS_SIZE; ++i) {
+      print(numbers[i] + " ");
+   }
+   printLine();
+
+   // Prompt the user to enter a value
+   print("Enter a value: ");
+   key = getIntFromUser();
+
+   // Call the binary search function to find the key in the array
+   keyIndex = BinarySearch(numbers, NUMBERS_SIZE, key);
+
+   // Check if the key was found or not
+   if (keyIndex == -1) {
+      printLine(key + " was not found.");
+   } else {
+      printLine("Found " + key + " at index " + keyIndex + ".");
+   }
+}

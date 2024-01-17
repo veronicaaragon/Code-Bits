@@ -1,0 +1,17 @@
+// Function to find the maximum value in an array
+function FindMax(inputArray) {
+   // Initialize max variable with the first element of the array
+   let max = inputArray[0];
+
+   // Iterate through the array starting from the second element
+   for (let i = 1; i < inputArray.length; ++i) {
+      // Check if the current element is greater than the current max
+      if (inputArray[i] > max) {
+         // If true, update max with the current element
+         max = inputArray[i];
+      }
+   }
+
+   // Return the maximum value found in the array
+   return max;
+}

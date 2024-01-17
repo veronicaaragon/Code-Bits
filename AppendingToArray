@@ -1,0 +1,13 @@
+// Function to append a new item to an array
+function arrayAppend(array, newItem) {
+   // Get the current size of the array
+   let currentSize = array.length;
+
+   // Increase array size by one
+   // Note: In many programming languages, the size of an array is automatically adjusted
+   // when you add an element, so explicit size manipulation might not be necessary.
+
+   // Append the new item to the end of the array
+   // Using the current size as the index ensures the new item is added at the end
+   array[currentSize] = newItem;
+}

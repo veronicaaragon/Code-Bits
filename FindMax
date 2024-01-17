@@ -1,0 +1,26 @@
+// Function to find the maximum value in a list
+function findMax(list, listSize) {
+   // Check if the list has at least one element
+   if (listSize >= 1) {
+      // Initialize the maximum variable with the first element of the list
+      let maximum = list[0];
+
+      // Start iterating from the second element of the list
+      let i = 1;
+
+      // Iterate through the list to find the maximum element
+      while (i < listSize) {
+         // Check if the current element is greater than the current maximum
+         if (list[i] > maximum) {
+            // If true, update the maximum with the current element
+            maximum = list[i];
+         }
+
+         // Move to the next element in the list
+         i = i + 1;
+      }
+
+      // Return the maximum value found in the list
+      return maximum;
+   }
+}

@@ -1,0 +1,14 @@
+BSTReplaceChild(parent, currentChild, newChild) {
+   if (parent⇢left != currentChild &&
+       parent⇢right != currentChild)
+      return false
+
+   if (parent⇢left == currentChild)
+      parent⇢left = newChild
+   else
+      parent⇢right = newChild
+
+   if (newChild != null)
+      newChild⇢parent = parent
+   return true
+}

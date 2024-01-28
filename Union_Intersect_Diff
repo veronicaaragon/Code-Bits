@@ -1,0 +1,30 @@
+SetUnion(set1, set2) {
+   result = Create new, empty set
+   for each (element in set1) {
+      Add element to result
+   }
+   for each (element in set2) {
+      Add element to result
+   }
+   return result
+}
+
+SetIntersection(set1, set2) {
+   result = Create new, empty set
+   for each (element in set1) {
+      if (SetSearch(set2, element⇢key) != null) {
+         Add element to result
+      }
+   }
+   return result
+}
+
+SetDifference(set1, set2) {
+   result = Create new, empty set
+   for each (element in set1) {
+      if (SetSearch(set2, element⇢key) == null) {
+         Add element to result
+      }
+   }
+   return result
+}

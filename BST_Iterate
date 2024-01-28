@@ -1,0 +1,16 @@
+class BSTIterator:
+    def __init__(self, node):
+        self.node = node
+
+    # For Python versions >= 3
+    def __next__(self): 
+        return self.next()
+
+    # For Python versions < 3
+    def next(self):              
+        if self.node == None:
+            raise StopIteration
+        else:
+            current = self.node.data
+            self.node = self.node.get_successor()
+            return current

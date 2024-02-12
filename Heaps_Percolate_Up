@@ -1,0 +1,25 @@
+MaxHeapPercolateDown(nodeIndex, heapArray, arraySize) {
+   childIndex = 2 * nodeIndex + 1
+   value = heapArray[nodeIndex]
+
+   while (childIndex < arraySize) {
+      // Find the max among the node and all the node's children
+      maxValue = value
+      maxIndex = -1
+      for (i = 0; i < 2 && i + childIndex < arraySize; i++) {
+         if (heapArray[i + childIndex] > maxValue) {
+            maxValue = heapArray[i + childIndex]
+            maxIndex = i + childIndex
+         }
+      }
+
+      if (maxValue == value) {
+         return
+      }
+      else {
+         swap heapArray[nodeIndex] and heapArray[maxIndex]
+         nodeIndex = maxIndex
+         childIndex = 2 * nodeIndex + 1
+      }
+   }
+}

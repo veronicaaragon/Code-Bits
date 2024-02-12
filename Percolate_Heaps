@@ -1,0 +1,11 @@
+MaxHeapPercolateUp(nodeIndex, heapArray) {
+   while (nodeIndex > 0) {
+      parentIndex = (nodeIndex - 1) / 2
+      if (heapArray[nodeIndex] <= heapArray[parentIndex])
+         return
+      else {
+         swap heapArray[nodeIndex] and heapArray[parentIndex]
+         nodeIndex = parentIndex
+      }
+   }
+}
